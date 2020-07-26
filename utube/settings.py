@@ -27,10 +27,6 @@ DATABASES['default'].update(db_from_env)
 SECRET_KEY = 't!9e_gn8(=d68ea+!^a&^z-zvh%k#w7jkg0jd^p+&_rcb%7_)!'
 
 
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
