@@ -9,6 +9,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LoginView
 
 urlpatterns = [
+    path('', Index.as_view(), name='list'),
     path('admin/', admin.site.urls),
     path('videos/', include(("u_tube.urls", "u_tube"), namespace='videos')),
     path('dashboard/',include(("dashboard.urls", "dashboard"), namespace='dashboard')),
