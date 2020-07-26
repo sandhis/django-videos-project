@@ -1,0 +1,128 @@
+{% extends 'u_tube/base.html' %}
+
+{% block content %}
+<style>
+    .chart{
+        display:flex;
+    }
+    .card-text{
+      font-size: xxx-large;
+    }
+    .proper{
+      display:flex;
+      gap:30px;
+    }
+</style> 
+<div class="alert alert-success" role="alert">
+  Hey, welcome {{ user.username }} to the dashboard section here you can see your videos status
+</div>
+<div class= "proper">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Total Views</h5>
+          <span class="badge badge-secondary">
+          <p class="card-text">1.73K</p></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Total Likes</h5>
+          <span class="badge badge-secondary">
+          <p class="card-text">1.46K</p></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Subscribers</h5>
+          <span class="badge badge-secondary">
+          <p class="card-text">7.42K</p></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Subscribers+</h5>
+          <span class="badge badge-secondary">
+            <p class="card-text">542<i class="fa fa-arrow-circle-up" aria-hidden="true"></i></p></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class= "container">
+    <div class= "chart">
+      <div>
+        <canvas id="Video-views" width="600" height="400"></canvas>
+      </div>
+        <div>
+          <canvas id="bar-chart-horizontal" width="600" height="400"></canvas>
+        </div>
+    </div>
+  </div>
+<script>
+new Chart(document.getElementById("bar-chart-horizontal"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Robert arm", "Big bunny", "Sample robot1", "Sample bunny1"],
+      datasets: [
+        {
+          label: "Liked ",
+          backgroundColor: ["green", "orange","purple","navy"],
+          data: [128,763,357,216]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Most liked videos'
+      }
+    }
+});
+// Bar chart
+new Chart(document.getElementById("Video-views"), {
+  type: 'line',
+  data: {
+    labels: [0,100,200,300,40,500,600,700,800],
+    datasets: [{ 
+        data: [0,86,99,104,106,107,111,133],
+        label: "Robert arm",
+        borderColor: "green",
+        fill: false
+      }, { 
+        data: [0,282,350,411,502,635,809,947],
+        label: "Big bunny",
+        borderColor: "orange",
+        fill: false
+      }, { 
+        data: [0,168,170,178,190,203,276,408],
+        label: "Sample robot1",
+        borderColor: "purple",
+        fill: false
+      }, { 
+        data: [0,10,16,16,20,24,38,279],
+        label: "Sample bunny1",
+        borderColor: "navy",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'videos views'
+    }
+  }
+});
+</script>
+{% endblock %}
