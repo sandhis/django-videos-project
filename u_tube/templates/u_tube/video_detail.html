@@ -1,16 +1,16 @@
 {% extends 'u_tube/base.html' %}
 {% block content %}
-    <div>
-        <video width="640" height="360" controls>
-            <source src="{{ object.video.url}}" type="video/mp4">
-        </video>
-    </div>
-<h1></h1>
-<div><font size = "+20">
-<b>{{ object.title.upper }}{{ MEDIA_URL}}</b></font></h2></div>
-<h3> description:</h3>
-{{object.description}}
-<div> 
- date: {{ object.pub_date }}
- </div>
+  <div>
+    <video width="640" height="360" controls>
+      <source src="{{ object.video.url }}" type="video/mp4">
+    </video>
+  </div>
+  <h1></h1>
+  <div><font size="+20">
+    <b>{{ object.title.upper }}{{ MEDIA_URL }}</b></font></h2></div>
+  <h3> description:</h3>
+  {{ object.description }}
+  <div>
+    date: {{ object.pub_date }}
+  </div>
 {% endblock %}
