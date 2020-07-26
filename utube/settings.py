@@ -1,6 +1,6 @@
 import os
 import dj_database_url
-from aws.conf import *
+from utube.aws.conf import *
 
 DEBUG = True
 
