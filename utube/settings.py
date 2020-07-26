@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'storages',
+    'accounts',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_tables2',
